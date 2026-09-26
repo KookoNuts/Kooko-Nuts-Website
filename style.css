@@ -1,8 +1,6 @@
-```css
 /* ==============================
    KOOKO NUTS - STYLE SHEET
    ============================== */
-
 
 /* ---------- GENERAL ---------- */
 
@@ -33,18 +31,17 @@ img {
 }
 
 
-/* ---------- NAVIGATION ---------- */
+/* ==============================
+   NAVIGATION
+   ============================== */
 
 header {
     background-color: #5a2e16;
     color: white;
-
     padding: 15px 6%;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -59,9 +56,7 @@ header {
 .logo img {
     width: 100px;
     height: 100px;
-
     object-fit: contain;
-
     border-radius: 50%;
 }
 
@@ -72,7 +67,6 @@ header {
 
 nav ul {
     list-style: none;
-
     display: flex;
     gap: 25px;
 }
@@ -80,7 +74,6 @@ nav ul {
 nav ul li a {
     color: white;
     font-weight: bold;
-
     transition: 0.3s;
 }
 
@@ -89,32 +82,87 @@ nav ul li a:hover {
 }
 
 
-/* ---------- HERO / HOME ---------- */
+/* ==============================
+   HOME / HERO
+   ============================== */
 
 .hero {
     min-height: 90vh;
-
-    background:
-        linear-gradient(
-            rgba(45, 22, 10, 0.65),
-            rgba(45, 22, 10, 0.65)
-        ),
-        url("images/nuts.jpg") center/cover no-repeat;
-
+    position: relative;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-
     text-align: center;
-
     padding: 50px 20px;
 }
+
+
+/* ---------- MOVING HOME PICTURES ---------- */
+
+.home-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.home-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0;
+
+    transition: opacity 1.2s ease-in-out;
+}
+
+.home-slide.active {
+    opacity: 1;
+}
+
+
+/* ---------- DARK OVERLAY ---------- */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        rgba(45, 22, 10, 0.65);
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* ---------- HERO CONTENT ---------- */
 
 .hero-content {
     max-width: 900px;
     width: 100%;
 
     color: white;
+
+    position: relative;
+
+    z-index: 2;
 }
 
 
@@ -138,15 +186,12 @@ nav ul li a:hover {
 
 .hero-content h1 {
     font-size: 60px;
-
     margin-bottom: 15px;
-
     color: #f6b44b;
 }
 
 .hero-content p {
     font-size: 22px;
-
     margin-bottom: 30px;
 }
 
@@ -155,17 +200,16 @@ nav ul li a:hover {
 
 .hero-buttons {
     display: flex;
-
     justify-content: center;
     align-items: center;
-
     flex-wrap: wrap;
-
     gap: 10px;
 }
 
 
-/* ---------- BUTTONS ---------- */
+/* ==============================
+   BUTTONS
+   ============================== */
 
 .btn {
     display: inline-block;
@@ -188,7 +232,6 @@ nav ul li a:hover {
 
 .primary-btn:hover {
     background-color: #ffffff;
-
     transform: translateY(-3px);
 }
 
@@ -199,12 +242,13 @@ nav ul li a:hover {
 
 .whatsapp-btn:hover {
     background-color: #1da851;
-
     transform: translateY(-3px);
 }
 
 
-/* ---------- GENERAL SECTIONS ---------- */
+/* ==============================
+   GENERAL SECTIONS
+   ============================== */
 
 section {
     padding: 70px 7%;
@@ -212,15 +256,12 @@ section {
 
 .section-title {
     text-align: center;
-
     margin-bottom: 45px;
 }
 
 .section-title h2 {
     font-size: 38px;
-
     color: #5a2e16;
-
     margin-bottom: 10px;
 }
 
@@ -229,7 +270,9 @@ section {
 }
 
 
-/* ---------- ABOUT ---------- */
+/* ==============================
+   ABOUT
+   ============================== */
 
 .about {
     background-color: #ffffff;
@@ -237,79 +280,19 @@ section {
 
 .about-content {
     max-width: 900px;
-
     margin: auto;
-
     text-align: center;
 }
 
 .about-content p {
     font-size: 18px;
-
     color: #5f4635;
 }
 
 
-/* ==================================
-   KOOKO NUTS LIVE PICTURE GALLERY
-   ================================== */
-
-.gallery {
-    background-color: #fffaf3;
-}
-
-.gallery-container {
-    max-width: 1200px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-.gallery-item {
-    width: 100%;
-
-    height: 300px;
-
-    background-color: #f5e6d5;
-
-    border-radius: 15px;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 5px 20px rgba(70, 35, 15, 0.12);
-
-    transition: 0.3s;
-}
-
-.gallery-item:hover {
-    transform: translateY(-6px);
-
-    box-shadow:
-        0 10px 25px rgba(70, 35, 15, 0.2);
-}
-
-.gallery-item img {
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    transition: 0.3s;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.03);
-}
-
-
-/* ---------- PRODUCTS ---------- */
+/* ==============================
+   PRODUCTS
+   ============================== */
 
 .products {
     background-color: #fff4e2;
@@ -353,11 +336,10 @@ section {
 }
 
 
-/* ---------- PRODUCT IMAGE SPACE ---------- */
+/* ---------- PRODUCT IMAGE ---------- */
 
 .product-image {
     width: 100%;
-
     height: 230px;
 
     background-color: #f5e6d5;
@@ -365,18 +347,13 @@ section {
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 
     overflow: hidden;
 }
 
-
-/* ---------- PRODUCT IMAGE ---------- */
-
 .product-image img {
     width: 100%;
-
     height: 100%;
 
     object-fit: cover;
@@ -412,7 +389,34 @@ section {
 }
 
 
-/* ---------- CONTACT ---------- */
+/* ==============================
+   PRODUCT BOOKING
+   ============================== */
+
+.product-booking {
+    text-align: center;
+
+    margin-top: 50px;
+}
+
+.product-booking h3 {
+    color: #5a2e16;
+
+    font-size: 28px;
+
+    margin-bottom: 10px;
+}
+
+.product-booking p {
+    color: #76553f;
+
+    margin-bottom: 20px;
+}
+
+
+/* ==============================
+   CONTACT
+   ============================== */
 
 .contact {
     background-color: #5a2e16;
@@ -455,7 +459,9 @@ section {
 }
 
 
-/* ---------- FOOTER ---------- */
+/* ==============================
+   FOOTER
+   ============================== */
 
 footer {
     background-color: #32170b;
@@ -470,7 +476,9 @@ footer {
 }
 
 
-/* ---------- TABLET ---------- */
+/* ==============================
+   TABLET
+   ============================== */
 
 @media (max-width: 900px) {
 
@@ -492,10 +500,6 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .gallery-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .hero-content h1 {
         font-size: 48px;
     }
@@ -504,10 +508,13 @@ footer {
         width: 250px;
         height: 250px;
     }
+
 }
 
 
-/* ---------- MOBILE ---------- */
+/* ==============================
+   MOBILE
+   ============================== */
 
 @media (max-width: 600px) {
 
@@ -569,18 +576,6 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    /* Gallery on phones */
-
-    .gallery-container {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-item {
-        height: 300px;
-    }
-
-    /* Product pictures on phones */
-
     .product-image {
         height: 250px;
     }
@@ -592,5 +587,5 @@ footer {
 
         max-width: 250px;
     }
+
 }
-```
