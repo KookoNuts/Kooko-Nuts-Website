@@ -1,14 +1,6 @@
-```javascript
 // ==============================
 // KOOKO NUTS - JAVASCRIPT
 // ==============================
-
-
-// ---------- MOBILE NAVIGATION ----------
-
-const nav = document.querySelector("nav");
-
-const header = document.querySelector("header");
 
 
 // ---------- SMOOTH SCROLLING ----------
@@ -37,71 +29,49 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 });
 
 
-// ---------- GALLERY IMAGE VIEWER ----------
+// ---------- HOME PAGE SLIDESHOW ----------
 
-const galleryImages = document.querySelectorAll(".gallery-item img");
+const slides = document.querySelectorAll(".home-slide");
 
-galleryImages.forEach(image => {
+let currentSlide = 0;
 
-    image.addEventListener("click", function () {
+function showSlide(index) {
 
-        const overlay = document.createElement("div");
+    slides.forEach((slide, i) => {
 
-        overlay.classList.add("image-overlay");
+        slide.classList.remove("active");
 
-        const largeImage = document.createElement("img");
-
-        largeImage.src = this.src;
-
-        largeImage.alt = this.alt;
-
-        overlay.appendChild(largeImage);
-
-        document.body.appendChild(overlay);
-
-
-        // Close when clicking the image
-        largeImage.addEventListener("click", function (event) {
-
-            event.stopPropagation();
-
-            overlay.remove();
-
-        });
-
-
-        // Close when clicking outside
-        overlay.addEventListener("click", function () {
-
-            overlay.remove();
-
-        });
-
-
-        // Close with ESC key
-        document.addEventListener("keydown", function closeImage(event) {
-
-            if (event.key === "Escape") {
-
-                overlay.remove();
-
-                document.removeEventListener(
-                    "keydown",
-                    closeImage
-                );
-
-            }
-
-        });
+        if (i === index) {
+            slide.classList.add("active");
+        }
 
     });
 
-});
+}
+
+if (slides.length > 0) {
+
+    showSlide(currentSlide);
+
+    setInterval(() => {
+
+        currentSlide++;
+
+        if (currentSlide >= slides.length) {
+            currentSlide = 0;
+        }
+
+        showSlide(currentSlide);
+
+    }, 4000);
+
+}
 
 
 // ---------- PRODUCT CARD MESSAGE ----------
 
-const productCards = document.querySelectorAll(".product-card");
+const productCards =
+    document.querySelectorAll(".product-card");
 
 productCards.forEach(card => {
 
@@ -137,4 +107,3 @@ yearElements.forEach(element => {
         new Date().getFullYear();
 
 });
-```
