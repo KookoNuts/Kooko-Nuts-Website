@@ -2,8 +2,6 @@
    KOOKO NUTS - STYLE SHEET
    ============================== */
 
-/* ---------- GENERAL ---------- */
-
 * {
     margin: 0;
     padding: 0;
@@ -32,7 +30,7 @@ img {
 
 
 /* ==============================
-   NAVIGATION
+   HEADER
    ============================== */
 
 header {
@@ -83,35 +81,47 @@ nav ul li a:hover {
 
 
 /* ==============================
-   HOME / HERO
+   HOME
    ============================== */
 
 .hero {
     min-height: 90vh;
+
     position: relative;
+
     overflow: hidden;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
     text-align: center;
+
     padding: 50px 20px;
 }
 
 
-/* ---------- MOVING HOME PICTURES ---------- */
+/* MOVING IMAGES */
 
 .home-slideshow {
     position: absolute;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
+
     z-index: 0;
+
     overflow: hidden;
 }
 
 .home-slide {
     position: absolute;
+
     top: 0;
     left: 0;
 
@@ -122,7 +132,7 @@ nav ul li a:hover {
 
     opacity: 0;
 
-    transition: opacity 1.2s ease-in-out;
+    transition: opacity 1.5s ease-in-out;
 }
 
 .home-slide.active {
@@ -130,11 +140,9 @@ nav ul li a:hover {
 }
 
 
-/* ---------- DARK OVERLAY ---------- */
+/* OVERLAY */
 
-.hero::after {
-    content: "";
-
+.hero-overlay {
     position: absolute;
 
     top: 0;
@@ -143,30 +151,28 @@ nav ul li a:hover {
     width: 100%;
     height: 100%;
 
-    background:
-        rgba(45, 22, 10, 0.65);
+    background-color: rgba(45, 22, 10, 0.65);
 
     z-index: 1;
-
-    pointer-events: none;
 }
 
 
-/* ---------- HERO CONTENT ---------- */
+/* HOME CONTENT */
 
 .hero-content {
-    max-width: 900px;
-    width: 100%;
-
-    color: white;
-
     position: relative;
 
     z-index: 2;
+
+    max-width: 900px;
+
+    width: 100%;
+
+    color: white;
 }
 
 
-/* ---------- LARGE HOME LOGO ---------- */
+/* LOGO */
 
 .home-logo {
     width: 300px;
@@ -176,40 +182,40 @@ nav ul li a:hover {
 
     margin: 0 auto 25px auto;
 
-    display: block;
-
     border-radius: 50%;
 }
 
 
-/* ---------- HERO TEXT ---------- */
+/* HOME TEXT */
 
 .hero-content h1 {
     font-size: 60px;
+
     margin-bottom: 15px;
+
     color: #f6b44b;
 }
 
 .hero-content p {
     font-size: 22px;
+
     margin-bottom: 30px;
 }
 
 
-/* ---------- HERO BUTTONS ---------- */
+/* BUTTONS */
 
 .hero-buttons {
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
     flex-wrap: wrap;
+
     gap: 10px;
 }
-
-
-/* ==============================
-   BUTTONS
-   ============================== */
 
 .btn {
     display: inline-block;
@@ -227,27 +233,31 @@ nav ul li a:hover {
 
 .primary-btn {
     background-color: #f6b44b;
+
     color: #3d2415;
 }
 
 .primary-btn:hover {
     background-color: #ffffff;
+
     transform: translateY(-3px);
 }
 
 .whatsapp-btn {
     background-color: #25d366;
+
     color: white;
 }
 
 .whatsapp-btn:hover {
     background-color: #1da851;
+
     transform: translateY(-3px);
 }
 
 
 /* ==============================
-   GENERAL SECTIONS
+   SECTIONS
    ============================== */
 
 section {
@@ -256,12 +266,15 @@ section {
 
 .section-title {
     text-align: center;
+
     margin-bottom: 45px;
 }
 
 .section-title h2 {
     font-size: 38px;
+
     color: #5a2e16;
+
     margin-bottom: 10px;
 }
 
@@ -280,12 +293,15 @@ section {
 
 .about-content {
     max-width: 900px;
+
     margin: auto;
+
     text-align: center;
 }
 
 .about-content p {
     font-size: 18px;
+
     color: #5f4635;
 }
 
@@ -310,9 +326,6 @@ section {
     margin: auto;
 }
 
-
-/* ---------- PRODUCT CARD ---------- */
-
 .product-card {
     background-color: white;
 
@@ -335,11 +348,9 @@ section {
         0 10px 25px rgba(70, 35, 15, 0.2);
 }
 
-
-/* ---------- PRODUCT IMAGE ---------- */
-
 .product-image {
     width: 100%;
+
     height: 230px;
 
     background-color: #f5e6d5;
@@ -347,6 +358,7 @@ section {
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     overflow: hidden;
@@ -354,13 +366,11 @@ section {
 
 .product-image img {
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
 }
-
-
-/* ---------- PRODUCT INFORMATION ---------- */
 
 .product-info {
     padding: 20px;
@@ -387,11 +397,6 @@ section {
 
     color: #d47b00;
 }
-
-
-/* ==============================
-   PRODUCT BOOKING
-   ============================== */
 
 .product-booking {
     text-align: center;
@@ -547,6 +552,7 @@ footer {
 
     .home-logo {
         width: 200px;
+
         height: 200px;
 
         margin-bottom: 20px;
