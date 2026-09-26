@@ -3,7 +3,56 @@
 // ==============================
 
 
-// ---------- SMOOTH SCROLLING ----------
+// ==============================
+// HOME SLIDESHOW
+// ==============================
+
+const slides = document.querySelectorAll(".home-slide");
+
+let currentSlide = 0;
+
+
+function showSlide(index) {
+
+    slides.forEach((slide) => {
+
+        slide.classList.remove("active");
+
+    });
+
+    if (slides[index]) {
+
+        slides[index].classList.add("active");
+
+    }
+
+}
+
+
+if (slides.length > 0) {
+
+    showSlide(currentSlide);
+
+    setInterval(() => {
+
+        currentSlide++;
+
+        if (currentSlide >= slides.length) {
+
+            currentSlide = 0;
+
+        }
+
+        showSlide(currentSlide);
+
+    }, 4000);
+
+}
+
+
+// ==============================
+// SMOOTH SCROLLING
+// ==============================
 
 document.querySelectorAll('a[href^="#"]').forEach(link => {
 
@@ -18,8 +67,11 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
             event.preventDefault();
 
             target.scrollIntoView({
+
                 behavior: "smooth",
+
                 block: "start"
+
             });
 
         }
@@ -29,49 +81,13 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 });
 
 
-// ---------- HOME PAGE SLIDESHOW ----------
-
-const slides = document.querySelectorAll(".home-slide");
-
-let currentSlide = 0;
-
-function showSlide(index) {
-
-    slides.forEach((slide, i) => {
-
-        slide.classList.remove("active");
-
-        if (i === index) {
-            slide.classList.add("active");
-        }
-
-    });
-
-}
-
-if (slides.length > 0) {
-
-    showSlide(currentSlide);
-
-    setInterval(() => {
-
-        currentSlide++;
-
-        if (currentSlide >= slides.length) {
-            currentSlide = 0;
-        }
-
-        showSlide(currentSlide);
-
-    }, 4000);
-
-}
-
-
-// ---------- PRODUCT CARD MESSAGE ----------
+// ==============================
+// PRODUCT CARD MESSAGE
+// ==============================
 
 const productCards =
     document.querySelectorAll(".product-card");
+
 
 productCards.forEach(card => {
 
@@ -96,10 +112,13 @@ productCards.forEach(card => {
 });
 
 
-// ---------- CURRENT YEAR ----------
+// ==============================
+// CURRENT YEAR
+// ==============================
 
 const yearElements =
     document.querySelectorAll(".current-year");
+
 
 yearElements.forEach(element => {
 
