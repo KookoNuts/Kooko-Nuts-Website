@@ -1,0 +1,544 @@
+
+/* ==============================
+   KOOKO NUTS - STYLE SHEET
+   ============================== */
+
+
+/* ---------- GENERAL ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fffaf3;
+    color: #3d2415;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* ---------- NAVIGATION ---------- */
+
+header {
+    background-color: #5a2e16;
+    color: white;
+
+    padding: 15px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+}
+
+.logo h2 {
+    font-size: 24px;
+    color: #f6b44b;
+}
+
+nav ul {
+    list-style: none;
+
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f6b44b;
+}
+
+
+/* ---------- HERO / HOME ---------- */
+
+.hero {
+    min-height: 90vh;
+
+    background:
+        linear-gradient(
+            rgba(45, 22, 10, 0.65),
+            rgba(45, 22, 10, 0.65)
+        ),
+        url("images/nuts.jpg") center/cover no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 50px 20px;
+}
+
+.hero-content {
+    max-width: 900px;
+    width: 100%;
+
+    color: white;
+}
+
+
+
+/* ---------- LARGE HOME LOGO ---------- */
+
+.home-logo {
+    width: 300px;
+    height: 300px;
+
+    object-fit: cover;
+
+    margin: 0 auto 25px auto;
+
+    display: block;
+
+    border-radius: 50%;
+}
+
+
+
+
+/* ---------- HERO TEXT ---------- */
+
+.hero-content h1 {
+    font-size: 60px;
+
+    margin-bottom: 15px;
+
+    color: #f6b44b;
+}
+
+.hero-content p {
+    font-size: 22px;
+
+    margin-bottom: 30px;
+}
+
+
+/* ---------- HERO BUTTONS ---------- */
+
+.hero-buttons {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+
+/* ---------- BUTTONS ---------- */
+
+.btn {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    margin: 5px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background-color: #f6b44b;
+    color: #3d2415;
+}
+
+.primary-btn:hover {
+    background-color: #ffffff;
+
+    transform: translateY(-3px);
+}
+
+.whatsapp-btn {
+    background-color: #25d366;
+    color: white;
+}
+
+.whatsapp-btn:hover {
+    background-color: #1da851;
+
+    transform: translateY(-3px);
+}
+
+
+/* ---------- GENERAL SECTIONS ---------- */
+
+section {
+    padding: 70px 7%;
+}
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+
+    color: #5a2e16;
+
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #76553f;
+}
+
+
+/* ---------- ABOUT ---------- */
+
+.about {
+    background-color: #ffffff;
+}
+
+.about-content {
+    max-width: 900px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.about-content p {
+    font-size: 18px;
+
+    color: #5f4635;
+}
+
+
+/* ---------- PRODUCTS ---------- */
+
+.products {
+    background-color: #fff4e2;
+}
+
+.product-container {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+
+/* ---------- PRODUCT CARD ---------- */
+
+.product-card {
+    background-color: white;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 20px rgba(70, 35, 15, 0.12);
+
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 10px 25px rgba(70, 35, 15, 0.2);
+}
+
+
+/* ---------- PRODUCT IMAGE SPACE ---------- */
+
+.product-image {
+    width: 100%;
+
+    height: 230px;
+
+    background-color: #f5e6d5;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+/* ---------- PRODUCT IMAGE ---------- */
+
+.product-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* ---------- PRODUCT INFORMATION ---------- */
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    color: #5a2e16;
+
+    font-size: 22px;
+
+    margin-bottom: 8px;
+}
+
+.product-info p {
+    color: #76553f;
+
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 24px;
+
+    font-weight: bold;
+
+    color: #d47b00;
+}
+
+
+
+
+
+
+/* ---------- CONTACT ---------- */
+
+.contact {
+    background-color: #5a2e16;
+
+    color: white;
+
+    text-align: center;
+}
+
+.contact .section-title h2 {
+    color: #f6b44b;
+}
+
+.contact .section-title p {
+    color: #f5e6d5;
+}
+
+.contact-info {
+    max-width: 600px;
+
+    margin: auto;
+}
+
+.contact-info p {
+    font-size: 18px;
+
+    margin-bottom: 20px;
+}
+
+.whatsapp-number {
+    font-size: 24px;
+
+    font-weight: bold;
+
+    color: #25d366;
+
+    display: block;
+
+    margin-bottom: 25px;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    background-color: #32170b;
+
+    color: #d9c4b2;
+
+    text-align: center;
+
+    padding: 20px;
+
+    font-size: 14px;
+}
+
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 900px) {
+
+    header {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .product-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-content h1 {
+        font-size: 48px;
+    }
+
+    .home-logo {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 12px 5%;
+    }
+
+    .logo h2 {
+        font-size: 20px;
+    }
+
+    .logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    .hero {
+        min-height: 80vh;
+
+        padding: 40px 15px;
+    }
+
+    .home-logo {
+        width: 200px;
+        height: 200px;
+
+        margin-bottom: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    section {
+        padding: 55px 5%;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    .product-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: 250px;
+    }
+
+    /* Product pictures on phones */
+
+    .product-image {
+        height: 250px;
+    }
+
+    .btn {
+        display: block;
+
+        margin: 10px auto;
+
+        max-width: 250px;
+    }
+}
+
+
+
